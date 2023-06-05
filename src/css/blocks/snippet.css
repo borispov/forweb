@@ -1,0 +1,6 @@
+.snippet {
+  position: relative;
+  border: 1px solid var(--color-mid);
+  border-radius: var(--border-radius);
+  max-width: var(--snippet-width);
+}

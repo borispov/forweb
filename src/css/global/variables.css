@@ -1,0 +1,129 @@
+
+/* Colors */
+:root {
+  --color-black: #1c1a22;
+  --color-light: #ffffff;
+  --color-dark: #1a1a1a;
+  --color-accent: #C4605E;
+  --color-accent-2: #474973;
+  --color-mid: #191919;
+  --color-mid-glare: #b3b3b3;
+  --color-mid-light: #cdcad5;
+  --color-primary: #F4BF3C;
+  --color-primary-glare: #C99290;
+  --color-onyx: #3a3b3f;
+
+  /* experimental colors: */
+  --color-sec: #ff006a;
+
+  /* filter: invert(100%); */
+}
+
+/* img:not([src*=".svg"]), video {   */
+/*    filter: invert(100%); */
+/* } */
+
+/* Global variables */
+:root {
+  --gutter: var(--space-s-m);
+  --border-radius: 0.75rem;
+  --border-radius-inner: 0.5rem;
+  --transition-base: 250ms ease;
+  --transition-movement: 200ms linear;
+  --transition-fade: 200ms ease;
+  --transition-bounce: 500ms cubic-bezier(0.5, 0.05, 0.2, 1.5);
+  --wrapper-width: clamp(16rem, 93vw, 85rem);
+  --menu-border-radius: 2.25rem;
+
+  --snippet-width: clamp(16rem, 88vw, 35rem);
+  --b-top: 1px solid var(--color-mid);
+
+  --lh100: 100%;
+  --lh140: 140%;
+  --lh160: 160%;
+
+  --t: 250ms linear;
+  --t-fast: 200ms linear;
+  --t-slow: 330ms linear;
+}
+
+/* @link https://utopia.fyi/type/calculator?c=320,16,1.25,1240,24,1.333,6,2,1280&s=0.75|0.5|0.25,1.5|2|3|4|6,&g=s,l,xl,12 */
+
+/* :root { */
+/*   --step--2: clamp(0.64rem, calc(0.57rem + 0.36vw), 0.84rem); */
+/*   --step--1: clamp(0.80rem, calc(0.69rem + 0.57vw), 1.13rem); */
+/*   --step-0: clamp(1.00rem, calc(0.83rem + 0.87vw), 1.50rem); */
+/*   --step-1: clamp(1.25rem, calc(0.99rem + 1.30vw), 2.00rem); */
+/*   --step-2: clamp(1.56rem, calc(1.18rem + 1.92vw), 2.67rem); */
+/*   --step-3: clamp(1.95rem, calc(1.40rem + 2.78vw), 3.55rem); */
+/*   --step-4: clamp(2.44rem, calc(1.64rem + 3.99vw), 4.74rem); */
+/*   --step-5: clamp(2.85rem, calc(1.92rem + 4.57vw), 6.31rem); */
+/*   --step-6: clamp(3.82rem, calc(2.21rem + 8.00vw), 8.42rem); */
+/* } */
+
+:root {
+  --step--2: clamp(0.69rem, calc(0.65rem + 0.21vw), 0.84rem);
+  --step--1: clamp(0.83rem, calc(0.75rem + 0.42vw), 1.13rem);
+  --step-0: clamp(1.00rem, calc(0.86rem + 0.71vw), 1.50rem);
+  --step-1: clamp(1.20rem, calc(0.97rem + 1.14vw), 2.00rem);
+  --step-2: clamp(1.44rem, calc(1.09rem + 1.75vw), 2.67rem);
+  --step-3: clamp(1.73rem, calc(1.21rem + 2.61vw), 3.55rem);
+  --step-4: clamp(2.07rem, calc(1.31rem + 3.80vw), 4.74rem);
+  --step-5: clamp(2.49rem, calc(1.40rem + 5.46vw), 6.31rem);
+  --step-6: clamp(2.99rem, calc(1.44rem + 7.76vw), 8.42rem);
+}
+
+:root {
+  --size-base: var(--step-0);
+}
+
+/* @link https://utopia.fyi/space/calculator?c=320,16,1.25,1240,24,1.333,6,2,1280&s=0.75|0.5|0.25,1.5|2|3|4|6,&g=s,l,xl,12 */
+
+:root {
+  --space-3xs: clamp(0.25rem, calc(0.21rem + 0.22vw), 0.38rem);
+  --space-2xs: clamp(0.50rem, calc(0.41rem + 0.43vw), 0.75rem);
+  --space-xs: clamp(0.75rem, calc(0.62rem + 0.65vw), 1.13rem);
+  --space-s: clamp(1.00rem, calc(0.83rem + 0.87vw), 1.50rem);
+  --space-m: clamp(1.50rem, calc(1.24rem + 1.30vw), 2.25rem);
+  --space-l: clamp(2.00rem, calc(1.65rem + 1.74vw), 3.00rem);
+  --space-xl: clamp(3.00rem, calc(2.48rem + 2.61vw), 4.50rem);
+  --space-2xl: clamp(4.00rem, calc(3.30rem + 3.48vw), 6.00rem);
+  --space-3xl: clamp(6.00rem, calc(4.96rem + 5.22vw), 9.00rem);
+
+  /* One-up pairs */
+  --space-3xs-2xs: clamp(0.25rem, calc(0.08rem + 0.87vw), 0.75rem);
+  --space-2xs-xs: clamp(0.50rem, calc(0.28rem + 1.09vw), 1.13rem);
+  --space-xs-s: clamp(0.75rem, calc(0.49rem + 1.30vw), 1.50rem);
+  --space-s-m: clamp(1.00rem, calc(0.57rem + 2.17vw), 2.25rem);
+  --space-m-l: clamp(1.50rem, calc(0.98rem + 2.61vw), 3.00rem);
+  --space-l-xl: clamp(2.00rem, calc(1.13rem + 4.35vw), 4.50rem);
+  --space-xl-2xl: clamp(3.00rem, calc(1.96rem + 5.22vw), 6.00rem);
+  --space-2xl-3xl: clamp(4.00rem, calc(2.26rem + 8.70vw), 9.00rem);
+
+  /* Custom pairs */
+}
+
+/* @link https://utopia.fyi/grid/calculator?c=320,16,1.25,1240,24,1.333,6,2,1280&s=0.75|0.5|0.25,1.5|2|3|4|6,&g=s,l,xl,12 */
+
+:root {
+  --grid-max-width: 93.00rem;
+  --grid-gutter: var(--space-s-l, clamp(1.00rem, calc(0.45rem + 2.74vw), 3.00rem));
+  --grid-columns: 12;
+}
+
+.u-container {
+  max-width: var(--grid-max-width);
+  padding-inline: var(--grid-gutter);
+  margin-inline: auto;
+}
+
+.u-grid {
+  display: grid;
+  gap: var(--grid-gutter);
+}
+
+
+/* Transition BG*/
+[data-color-mode], [data-bg="dark"], [data-bg="light"] {
+  transition: var(--t-slow);
+}

@@ -1,0 +1,64 @@
+.form {
+  display: grid;
+  grid-template-columns: repeat(4,1fr);
+  gap: 3rem 2rem;
+  max-width: 48rem;
+}
+
+.form__input-block {
+  margin-bottom: 2rem;
+  position: relative;
+  grid-column: span 2;
+}
+
+.form__label {
+  font-size: var(--step--1);
+  line-height: var(--lh140);
+  color: var(--color-mid);
+  letter-spacing: -0.02rem;
+
+  position: absolute;
+  top: 0;
+  right: 0;
+  pointer-events: none;
+  transform-origin: 0 0;
+  transition: transform var(--t);
+}
+
+.form span {
+  color: var(--color-accent);
+}
+
+.form__input {
+  outline: none;
+  color: inherit;
+  font-size: var(--step-4);
+  line-height: var(--lh140);
+  letter-spacing: -0.02rem;
+  padding-bottom: 1em;
+}
+
+.form__input--last {
+  grid-column: span 4;
+}
+
+.form__input::placeholder {
+  opacity: 0;
+}
+
+.form__input:focus~.form__label,.form__input:not(:placeholder-shown)~.form__label {
+    transform: translateY(-0.9rem)
+}
+
+.form [type="submit"] {
+  border-radius: var(--border-radius);
+  display: block;
+}
+
+.form__whatsapp {
+  display: block;
+  grid-column: span 2;
+  color: var(--color-accent-2);
+  text-decoration: underline;
+  font-weight: 700;
+}

@@ -1,0 +1,21 @@
+---
+const { data } = Astro.props;
+let { reccuring, value, startingAt } = data;
+---
+
+<div class="price region">
+
+  <p>
+    {
+    value && `${value} ש״ח` || (startingAt && reccuring && `החל מ- ${startingAt}ש״ח \n או ${reccuring}ש״ח/חודש`) ||
+    (startingAt && !reccuring && !value && `החל מ- ${startingAt}ש״ח`)
+    }
+  </p>
+</div>
+
+<style>
+  .price {
+    line-height: 1.2;
+    font-size: var(--step-0);
+  }
+</style>

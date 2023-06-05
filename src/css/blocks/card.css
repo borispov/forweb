@@ -1,0 +1,7 @@
+.card {
+  --flow-space: var(--space-xs);
+}
+
+.card h3 {
+  --flow-space: var(--space-2xs);
+}

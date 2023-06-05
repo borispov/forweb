@@ -1,0 +1,80 @@
+---
+
+import d from "../siteContent.json";
+
+---
+<section>
+  <h2 data-role="big">מחירון</h2>
+  <div class="region flow">
+    <div class="repel pricing-picker">
+      <div class="flow">
+        {
+          d.pricing.map((plan, i) => 
+            <div class="plan repel">
+              <div>
+                <h4>{plan.title}</h4>
+                <p>{plan.price.startingAt} ש״ח</p>
+              </div>
+              <input type="radio" name="plan-pick" data-index={i} } />
+            </div>
+          )
+        }
+      </div>
+    </div>
+  </div>
+</section>
+
+<script>
+  let plans = document.querySelectorAll('.plan input');
+  let descs = document.querySelectorAll('.pricing__display');
+
+  plans.forEach(p => {
+    p.addEventListener('click', () => {
+      plans.forEach(a => {
+        a.removeAttribute("checked")
+      })
+      p.setAttribute('checked', "checked")
+      let id = p.getAttribute('data-index')
+      document.querySelectorAll(`.pricing__display`).forEach(z => z.style.display = 'none')
+      document.querySelector(`.pricing__display[data-index="${id}"]`).style.display = 'block';
+    })
+  })
+
+</script>
+
+<style>
+
+  .plan {
+    border: 1px solid var(--color-mid);
+    border-radius: var(--border-radius);
+    max-width: 20rem;
+    position: relative;
+  }
+
+  .pricing__display {
+    display: none;
+  }
+
+  h2 {
+    font-size: var(--step-2);
+  }
+
+  input {
+    cursor: pointer;
+  }
+  input::after {
+    position: absolute;
+    content: "";
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    height: 100%;
+    z-index: 2;
+    width: 100%;
+  }
+
+  .pricing-picker {
+    align-items: start;
+  }
+</style>

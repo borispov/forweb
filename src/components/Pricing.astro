@@ -1,0 +1,78 @@
+---
+import d from "../siteContent.json";
+---
+<section data-bg="dark">
+  <h2 data-role="big">חבילות ומחירון</h2>
+  <div class="grid border-top" data-element="services">
+    {
+      d.pricing.map(plan => 
+        <div class="plan p-s flow">
+          <h4 class="plan__title">{plan.title}</h4>
+          <p class="">{plan.description}</p>
+          <ul>
+            {
+              plan.features.map(f => (
+                <li>{f}</li>
+              ))
+            }
+          </ul>
+          <div>
+          </div>
+        </div>
+      )
+    }
+  </div>
+</section>
+
+<style>
+  .plan {
+    border: 1px solid var(--color-mid);
+    border-radius: var(--border-radius);
+  }
+
+  .plan[data-mode="dark"] {
+    border-color: #fff;
+  }
+
+  .plan__title {
+    display: inline-block;
+    border-radius: 24px;
+    background: var(--color-accent);
+    padding: var(--space-3xs) var(--space-2xs);
+    color: #fff;
+    font-size: var(--step--1);
+    font-weight: 400;
+
+    border: 1px solid var(--color-mid);
+  }
+
+  .plan:nth-of-type(2) {
+    border: 1px solid var(--color-accent);
+  }
+
+  .plan__title:nth-of-type(2) {
+    border: 1px solid var(--color-accent);
+  }
+
+  p {
+    font-size: var(--step--1);
+    color: var(--color-mid-glare);
+    padding-top: var(--space-xs);
+  }
+
+  ul {
+    line-height: 1.5;
+    padding-inline-start: var(--space-m);
+  }
+  li {
+    font-size: var(--step--1);
+    margin: 0;
+    padding: 0;
+  }
+
+
+</style>
+
+<script>
+  let plan = document.querySelectorAll('.plan');
+</script>

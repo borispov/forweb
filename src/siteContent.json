@@ -1,0 +1,225 @@
+{
+  "hero": {
+    "title": "חממה לפיתוח חוויות דיגיטל לעסק",
+    "subtitle": "סוכנות קטנה מאשקלון שמתמחה בפיתוח ועיצוב אתרים ופתרונות web."
+  },
+  "header": {
+    "menu": ["יצירת קשר", "שירותים", "עבודות"]
+  },
+  "services": [
+    {
+      "title": "Headless CMS",
+      "description": "מערכת ניהול תוכן שמבוססת צד שרת שאינה קשורה לממשק ספציפי של צד-לקוח, דבר אשר הופך את המידע והתוכן זמינים לקריאה או זימון דרך API מכל מכשיר וממשק גרפי.,"
+    },
+    {
+      "title": "Business websites",
+      "description": "מדובר בפיתוח ועיצוב אתר בסיסי אשר מטרתו העיקרית הינה להציג מידע רלוונטי אודות העסק. אתר זה כולל בדרך-כלל מספר עמודים ואת דף הבית הכולל את מירב המידע החשוב. בפיתוח זה אין חשיבות רבה לאלמטים מעוצבים בהתאמה אישית ולרוב ניתן להתאים תבנית ובכך להוזיל עלויות וזמני פיתוח."
+    },
+    {
+      "title": "Ecommerce",
+      "description": "עיצוב ופיתוח חנות אינטרנטית אשר מאפשרת מכירה של מוצרים ישירות ללקוח או לעסקים. מערכת זו כוללת סליקה, ניהול מלאי, מערכת דיוור אלקטרוני וכל אינטגרציה חשובה. אנו מפתחים חנויות מבוססות Shopify או WooCommerce. ניתן גם לבנות חנות Headless אשר רק ניהול החנות מבוסס על Shopify, וכלל מערכת צד-הלקוח נבנית בהתאמה מאפס."
+    },
+    {
+      "title": "SEO services",
+      "description": "אנו מציעים שירותי SEO טכני וכתיבת תוכן ללקוחות שלנו בלבד. זהו אינו שירות שניתן להזמין בנפרד מפיתוח/עיצוב של אתר, אפליקציה או חנות אינטרנטית."
+    },
+    {
+      "title": "Web applications",
+      "description": "אפליקציית ווב זו תוכנית אשר רצה על גבי דפדפן (Chrome, Safari וכד׳) להבדיל מאפליקציות אשר מבוססות מכשיר (מחשב/טלפון) ורצות על מכשיר ספציפי בלבד."
+    }
+  ],
+  "techList": [
+    {
+      "icon": "/assets/icons/react.svg",
+      "name": "React"
+    },
+    {
+      "icon": "/assets/icons/go.svg",
+      "name": "Go"
+    },
+    {
+      "icon": "/assets/icons/node.svg",
+      "name": "Node"
+    },
+    {
+      "icon": "/assets/icons/astro-dark.svg",
+      "name": "Astro"
+    },
+    {
+      "icon": "/assets/icons/netlify.svg",
+      "name": "Netlify"
+    },
+    {
+      "icon": "/assets/icons/sanity.svg",
+      "name": "Sanity"
+    },
+    {
+      "icon": "/assets/icons/wp.svg",
+      "name": "WordPress"
+    },
+    {
+      "icon": "/assets/icons/shopify.svg",
+      "name": "Shopify"
+    },
+    {
+      "icon": "/assets/icons/css.svg",
+      "name": "Css"
+    }
+  ],
+  "technologies": [
+    {
+      "title": "Frameworks",
+      "list": [
+        {
+          "icon": "/assets/icons/astro.svg",
+          "name": "Astro"
+        },
+        {
+          "icon": "/assets/icons/netlify.svg",
+          "name": "Next.js"
+        }
+      ]
+    },
+    {
+      "title": "תוכן",
+      "list": [
+        {
+          "icon": "/assets/icons/sanity.svg",
+          "name": "Sanity"
+        },
+        {
+          "icon": "/assets/icons/wp.svg",
+          "name": "WordPress"
+        }
+      ]
+    },
+    {
+      "title": "פלטפורמת Ecom",
+      "list": [
+        {
+          "icon": "/assets/icons/shopify.svg",
+          "name": "Shopify"
+        }
+      ]
+    },
+    {
+      "title": "עיצוב",
+      "list": [
+        {
+          "icon": "/assets/icons/figma.svg",
+          "name": "Figma"
+        }
+      ]
+    },
+    {
+      "title": "הוצאה לאור (אחסון, דומיין וכאלה)",
+      "list": [
+        {
+          "icon": "/assets/icons/netlify.svg",
+          "name": "Netlify"
+        },
+        {
+          "name": "Box Domains"
+        }
+      ]
+    }
+  ],
+  "process": {
+    "title": "מערכת העבודה שלנו",
+    "description": "אנו מתמקדים בפיתוח מוצרים בהתאם לניתוח שוק מעמיק ולדרישות המדויקות של הפרויקט. מתחשבים הן בפרויקט והן בקהל היעד בהתאםת העיצוב, כותבים קוד יעיל וחכם להשגת התוצאה הרצויה באופן המהיר והנכון ביותר, כל זאת בעבודה בשקיפות אל מול מסגרת הזמן והתקציב של הלקוח",
+    "steps": [
+      {
+        "title": "אפיון",
+        "description": "הגדרת יעדים, מחקר שוק וקהל יעד"
+      },
+      {
+        "title": "פרוטוטייפינג",
+        "description": "פרוטוטייפינג ופיתוח"
+      },
+      {
+        "title": "ליטוש אחרון",
+        "description": "מסע לקוח, עיצוב מהתחלה עד סוף"
+      },
+      {
+        "title": "ליטוש אחרון",
+        "description": "חיבור לאחסון, חיבור לדומיין והדרכה על איך אתם מתנהלים מעכשיו..."
+      },
+      {
+        "title": "יישום טכני",
+        "description": "יישום טכני של התכנית"
+      }
+    ]
+  },
+  "projects": [
+    {
+      "title": "Raw Planet",
+      "description": "Raw Planet is an e-commerce online store based in Israel that specializes in raw food for canines. They primarily sell food, snacks and accessories. They shop is based on WooCommerce with custom design, custom plugins, various systems such as Email Marketing and more.",
+      "img": "/assets/raw.jpg"
+    },
+    {
+      "title": "Yifat Hikri Shamay",
+      "description": "Yifat Hikri Shamay is a Psychotherapist based in a northern settlement in Israel. She specialized in Cognitive Behavioral Therapy for adults and adolescences in general, and women in particular. She wanted a custom landing page to present herself. The website was design in Figma and built from scratch using Astro.js and TypeScript.",
+      "img": "/assets/yifat.jpg"
+    }
+  ],
+  "pricing": [
+    {
+      "title": "אתר בסיס",
+      "description": "לעסק מתחיל",
+      "features": [
+        "אתר WordPress מהיר ומאובטח",
+        "עיצוב על גבי תבנית יוקרתית",
+        "תשתית טכנית ל- SEO",
+        "פיתוח זריז ונגיש לכל כיס",
+        "המחיר ל-4 עמודים"
+      ],
+      "price": {
+        "value": 2000,
+        "reccuring": 450,
+        "startingAt": ""
+      }
+    },
+    {
+      "title": "Ecommerce",
+      "description": "חנות מסחר אונליין",
+      "features": [
+        "חנות Shopify",
+        "אפשרות לעיצוב מאפס!",
+        "תשתית ל- SEO ושימוש בבינה מלאכותית ליצירת תוכן",
+        "חיבור לסליקה, דומיין ו Email Marketing",
+        "הדרכה ותמיכה לשבועיים לאחר מסירה"
+      ],
+      "price": {
+        "value": "",
+        "reccuring": "",
+        "startingAt": 16500
+      }
+    },
+    {
+      "title": "אתר תדמית",
+      "description": "לעסקים, יזמים, סטרטאפים ועוד",
+      "features": [
+        "אתר Custom, מתוכנת ידנית מאפס",
+        "עיצוב האתר בהתאמה אישית",
+        "שימוש בטכנולוגיות הנכונות ביותר לנוחיות השימוש וביצועים פגז!",
+        "המחיר ל-5 עמודיפ"
+      ],
+      "price": {
+        "value": "",
+        "reccuring": 400,
+        "startingAt": 3500
+      }
+    }
+  ],
+  "contact": {
+    "title": "יצירת קשר",
+    "fields": {
+      "email": "אימייל",
+      "name": "שם",
+      "message": "הודעה"
+    }
+  },
+  "footer": {
+    "copyright_message": "@Forweb 2023"
+  }
+}

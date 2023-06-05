@@ -1,0 +1,118 @@
+<footer class="footer region border-top" dir="ltr">
+  <div class="footer-wrap">
+    <div class="footer__inner repel">
+
+      <div class="footer__item" style="flex: 3">
+        <p class="footer__copyright">
+          <small>
+
+                            © 2023 Designed and Developed by
+                        
+          </small>
+        </p>
+        <h1>FORWEB</h1>
+      </div>
+
+      <div class="footer__menu cluster">
+
+        <div class="footer__item footer__list">
+          <p>Balfour 28, Ashkelon, Israel</p>
+          <address>
+            <a href="tel:+972508564794" class="btn footer__link">
+              <span class="btn__text">
+                +972 50 8564794
+             </span>
+            </a>
+          </address>
+        </div>
+
+        <div class="footer__item footer-nav-menu-hidden">
+          <nav class="menu footer__menu" aria-label="Footer">
+              <ul class="footer__list footer__menu-list">
+                <li class="footer__item">
+                  <a href="https://www.facebook.com/forwebz/" class="btn footer__link">
+                    <span class="btn__text">
+                    Facebook
+                   </span>
+                  </a>
+                </li>
+                <li class="footer__item">
+                  <a href="https://miks-soft.com/privacy-policy" class="btn footer__link">
+                    <span class="btn__text">
+                      Privacy Policy
+                   </span>
+                  </a>
+                </li>
+              </ul>
+          </nav>
+      </div>
+
+
+    </div>
+  </div>
+</footer>
+
+<style>
+  .footer {
+    position: relative;
+    padding-top: var(--space-xl);
+    overflow: hidden;
+    font-size: var(--step-0);
+    flex-shrink: 0;
+    line-height: var(--lh140);
+  }
+
+  .footer-wrap {
+    margin: 1.5em;
+  }
+
+  .footer__inner {
+
+  }
+
+  .footer__menu {
+  }
+
+  .footer__list {
+    list-style: none;
+  }
+
+
+  .footer a[class] {
+    text-decoration: none;
+  }
+
+  .footer__link {
+    position: relative;
+    display: inline-block;
+    font-weight: 400;
+
+  }
+
+  .footer__link::before {
+    position: absolute;
+    bottom: -0.2rem;
+    left: 0;
+    width: 100%;
+    height: 0.05rem;
+    background-color: var(--color-accent);
+    transform-origin: right;
+    transform: scaleX(0);
+    transition: transform var(--t);
+    content: "";
+  }
+
+  .btn__text { pointer-events: none; }
+
+  .footer__link:hover::before {
+      transform-origin: left;
+      transform: scaleX(1)
+  }
+
+  @media (hover: none) {
+      .footer__link:hover::before {
+          transform:scaleX(0)
+      }
+  }
+
+</style>

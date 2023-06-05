@@ -1,0 +1,56 @@
+/*
+CLUSTER
+More info: https://every-layout.dev/layouts/cluster/
+A layout that lets you distribute items with consitent
+spacing, regardless of their size
+
+CUSTOM PROPERTIES AND CONFIGURATION
+--gutter (var(--space-s-m)): This defines the space
+between each item.
+
+--cluster-horizontal-alignment (flex-start) How items should align
+horizontally. Can be any acceptable flexbox aligmnent value.
+
+--cluster-vertical-alignment How items should align vertically.
+Can be any acceptable flexbox alignment value.
+*/
+
+.cluster {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--gutter, var(--space-s-l));
+  justify-content: var(--cluster-horizontal-alignment, flex-start);
+  align-items: var(--cluster-vertical-alignment, center);
+}
+
+/*
+REPEL
+A little layout that pushes items away from each other where
+there is space in the viewport and stacks on small viewports
+
+CUSTOM PROPERTIES AND CONFIGURATION
+--gutter (var(--space-s-m)): This defines the space
+between each item.
+
+--repel-vertical-alignment How items should align vertically.
+Can be any acceptable flexbox alignment value.
+*/
+.repel {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: var(--repel-vertical-alignment, center);
+  gap: var(--gutter, var(--space-s-m));
+}
+
+.repel[data-nowrap] {
+  flex-wrap: nowrap;
+}
+
+.repel[data-start] {
+  --repel-vertical-alignment: start;
+}
+
+.repel[data-reverse] {
+  flex-direction: row-reverse;
+}

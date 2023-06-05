@@ -1,0 +1,19 @@
+@import "global/reset.css";
+@import "global/variables.css";
+@import "global/global-styles.css";
+
+@import "blocks/card.css";
+@import "blocks/project.css";
+@import "blocks/snippet.css";
+@import "blocks/tech.css";
+@import "blocks/form.css";
+
+@import "composition/grid.css";
+@import "composition/prose.css";
+@import "composition/cluster.css";
+
+@import "utils/region.css";
+@import "utils/wrapper.css";
+@import "utils/border.css";
+@import "utils/padding.css";
+@import "utils/visually-hidden.css";

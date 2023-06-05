@@ -1,0 +1,16 @@
+/* 
+REGION UTILITY
+Consistent block padding for page sections
+*/
+.region {
+  padding-block: var(--region-space, var(--space-l-xl));
+}
+
+/* 
+FLOW UTILITY
+Like the Every Layout stack: https://every-layout.dev/layouts/stack/
+Info about this implementation: https://piccalil.li/quick-tip/flow-utility/ 
+*/
+.flow > * + * {
+  margin-top: var(--flow-space, 1em);
+}

@@ -1,0 +1,33 @@
+.project__header {
+  display: flex;
+  justify-content: space-between;
+  flex-direction: row-reverse;
+}
+
+.project__title {
+
+}
+
+.project__description {
+  max-width: 55ch;
+}
+
+.project__image {
+  object-fit: cover;
+  aspect-ratio: 1.6;
+  width: 80%;
+  margin: 0 auto
+}
+
+@media (max-width: 64rem) {
+  .project__header {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .project__description {
+    max-width: 100%;
+    border-top: 1px solid var(--color-mid-light);
+    border-top-width: 90%;
+  }
+}

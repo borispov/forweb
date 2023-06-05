@@ -1,0 +1,7 @@
+.prose {
+  max-width: 65ch;
+}
+
+.prose[data-prose="small"] {
+  max-width: 50ch;
+}

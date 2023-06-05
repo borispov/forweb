@@ -1,15 +1,354 @@
 ---
+import d from "../siteContent.json";
+import "../css/global.css";
+import Header from "../components/Header.astro";
+import Pricing from "../components/Pricing.astro";
+import Footer from "../components/Footer.astro";
 ---
 
-<html lang="en">
+<html lang="en" dir="rtl">
 	<head>
 		<meta charset="utf-8" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+		<link rel="icon" type="image/svg+xml" href="" />
 		<meta name="viewport" content="width=device-width" />
 		<meta name="generator" content={Astro.generator} />
-		<title>Astro</title>
+		<title>Forweb - Web</title>
 	</head>
-	<body>
-		<h1>Astro</h1>
+
+	<body class="wrapper">
+
+		<Header />
+		<!-- HERO Section -->
+		<div class="hero flow">
+			<!-- <h1 data-role="big">{d.hero.title}</h1> -->
+			<h1 data-role="big">חממה לפיתוח חוויות דיגיטל <span>לעסק</span></h1>
+			<p>{d.hero.subtitle}</p>
+		</div>
+
+		<!-- Projects Section -->
+		<section id="projects" class="region flow">
+			<h2>עבודות שלנו</h2>
+
+			{
+				d.projects.map(p =>
+					<div class="project border-top flow">
+						<div class="project__header">
+							<h3 class="project__title">{p.title}</h3>
+							<p class="project__description">{p.description}</p>
+						</div>
+						<div class="wrapper">
+							<img 
+								class="border project__image" 
+								src={p.img} 
+								alt={`${p.title} project`} 
+								/>
+						</div>
+					</div>
+				)
+			}
+		</section>
+
+		<!-- <Pricing /> -->
+
+		<!-- Process/workflow Section -->
+		<section class="[ process ] region flow" data-bg="light">
+			<div class="process__header repel" data-nowrap>
+				<h2 class="process__title">{d.process.title}</h2>
+				<p class="process__paragraph">{d.process.description}</p>
+			</div>
+			<div class="process__footer region" data-element="process">
+				<ul class="numlist" role="list">
+				{
+					d.process.steps.map((step) => 
+						<li class="numlist__item">
+							<div class="numlist__wrapper" >
+								<p class="numlist__text">{step.description}</p>
+							</div>
+						</li>)
+				}
+				</ul>
+			</div>
+		</section>
+
+		<!-- Services Section -->
+		<section class="region flow">
+			<h2>שירותים</h2>
+			<div class="grid" data-element="services">
+				{
+					d.services.map(service => 
+						<div class="card flow border-top">
+							<h3>{service.title}</h3>
+							<p>{service.description}</p>
+						</div>)
+				}
+			</div>
+		</section>
+
+		<!-- Tech Side Section -->
+		<section id="tech" class="tech__section region flow" data-bg="light">
+			<h2>הצד הטכנולוגי</h2>
+			<p class="border-top">
+				ההחלטה באילו כלים וטכנולוגיות להשתמש נובעת מתוך צרכי הלקוח, דרישות הפרויקט והקתציב בהתאם. אנו משתדלים תמיד לאמץ את הכלים הנכונים והיעילים ביותר. מירב העבודות שלנו נכתבות בקוד מאפס ולא ע״י שימוש בתבניות מוכנות ובוני אתרים אשר מעמיסים את אתרכם במלא חרא, מאטים את האתר ומפסידים לכם כסף. אלו הן חלק מארסנל הכלים העומדים לרשותנו:
+			</p>
+			<div class="tech-card">
+				{
+					d.techList.map(tech => (
+						<div class="tech__item">
+							<img src={tech.icon} alt={tech.name} />
+							<label class="tech__label">{tech.name}</label>
+						</div>
+					))
+				}
+			</div>
+		</section>
+
+		<section id="contact-form">
+			<h2>{d.contact.title}</h2>
+			<div class="wrapper border-top">
+				<div class="">
+          <a href="https://wa.me/+972508564794">
+            <p class="form__whatsapp text-step--1" >* לנוחיותכם, ניתן לשלוח הודעת WhatsApp</p>
+					</a>
+				</div>
+				<form action="POST" class="form region" >
+
+					<div class="form__input-block">
+						<input required class="form__input" type="text" placeholder="שם מלא" name="name" id="input_name" />
+						<label class="form__label" for="input_name">
+							שם מלא
+							<span>*</span>
+						</label>
+					</div>
+					<div class="form__input-block">
+						<input required class="form__input" type="text" placeholder="שם החברה" name="company" id="input_company" />
+						<label class="form__label" for="input_company">
+							שם החברה
+							<span>*</span>
+						</label>
+					</div>
+					<div class="form__input-block">
+						<input required class="form__input" type="email" placeholder="dahan.nir@gmail.com" name="email" id="input_email"/>
+						<label class="form__label" for="input_email">
+							אימייל
+							<span>*</span>
+						</label>
+					</div>
+					<div class="form__input-block">
+						<input required class="form__input" placeholder="מספר טלפון" type="tel" name="input_phone" />
+						<label class="form__label" for="input_phone">
+							מס׳ טלפון
+							<span>*</span>
+						</label>
+					</div>
+					<div class="form__input-block form__input--last">
+						<input class="form__input" type="text" placeholder="כמה מילים על הפרויקט" id="input_message"/>
+						<label class="form__label" for="input_message">
+							כמה מילים על הפרויקט
+						</label>
+					</div>
+					<button type="submit">שלח פרטים</button>
+				</form>
+			</div>
+		</section>
+
+		<Footer />
+
 	</body>
 </html>
+
+<script>
+  import bgTransitionOnElement from "../lib/bgTransition";
+  // bgTransitionOnElement('[data-bg="dark"]', window, document);
+
+</script>
+
+<style lang="scss">
+	.hero {
+		margin-bottom: var(--space-3xl);
+
+		h1 {
+			display: inline;
+			}
+
+		h1 span {
+			background: var(--color-mid);
+			display: inline;
+			color: var(--color-light);
+			border-radius: 0.125em;
+			padding: 0.025em;
+		}
+
+	}
+
+	input {
+		padding: var(--space-m);
+		border: none;
+		border-bottom: 1px solid var(--color-mid-glare);
+	}
+
+	.process__header {
+		--gutter: 2rem;
+		--grid-placement: 6;
+	}
+
+	.process__title {
+		font-size: var(--step-4);
+		line-height: var(--lh100);
+	}
+
+	.process__paragraph {
+		line-height: var(--lh140);
+		letter-spacing: -0.02rem;
+		font-size: var(--step--1);
+		max-width: var(--snippet-width);
+		opacity: 0.7;
+	}
+
+	.numlist {
+		position: relative;
+		display: grid;
+		grid-template-columns: repeat(5, 1fr);
+		gap: 2.5rem 0;
+		counter-reset: numlist;
+		list-style: none;
+
+		padding: 0;
+	}
+
+	.numlist__item {
+		position: relative;
+		color: var(--color-mid);
+		opacity: 0.8;
+    transition: var(--t-fast);
+	}
+
+	.numlist__item::before {
+		position: relative;
+		padding-bottom: var(--space-l);
+		line-height: var(--lh100);
+		display: block;
+
+		font-size: var(--step-2);
+		counter-increment: numlist;
+		content: counter(numlist, decimal-leading-zero);
+	}
+
+	.numlist__wrapper {
+		position: relative;
+	}
+
+	.numlist__wrapper::before {
+		position: relative;
+		display: block;
+    width: 100%;
+    height: 0.1rem;
+    background-color: var(--color-mid-glare);
+    content: "";
+		transition: transform var(--t);
+	}
+
+	.numlist__wrapper::after {
+		position: absolute;
+    content: "";
+		z-index: 1;
+		top: -0.5rem;
+		right: 0;
+		width: 1rem;
+		height: 1rem;
+		border-radius: 50%;
+		border: 1px solid var(--color-onyx);
+		background-color: var(--color-dark);
+    transition: var(--t-fast);
+	}
+
+	.numlist__item:hover {
+		color: var(--color-black);
+		opacity: 1;
+		cursor: default;
+
+		.numlist__wrapper::after {
+			border-color: var(--color-accent);
+			background-color: var(--color-accent);
+		}
+
+		.numlist__wrapper::before {
+			animation: slideside 1s linear;
+		}
+
+	}
+
+	@keyframes slideside {
+		0% {
+			transform: scaleX(0.5);
+			transform-origin: right;
+			background-color: var(--color-accent);
+		}
+
+		20% {
+			transform: scaleX(1);
+			transform-origin: left;
+			background-color: var(--color-accent);
+		}
+	}
+
+	.numlist__text {
+		padding-top: var(--space-m);
+		font-size: var(--step--2);
+		opacity: 0.9;
+		max-width: 16rem;
+	}
+
+	@media (max-width: 767px) {
+
+		.process__header {
+			display: flex;
+			flex-direction: column;
+		}
+		.numlist { display: block; }
+
+		.numlist__item { 
+			display: flex;
+			justify-content: space-between;
+		}
+
+		.numlist__item::before { 
+			width: 30%;
+		}
+
+		.numlist__item::after { 
+			position: absolute;
+			content: "";
+			top: 0;
+			right: 4rem;
+			width: 0.1rem;
+			height: 100%;
+			background-color: var(--color-onyx);
+		}
+
+		.numlist__wrapper {
+			position: static;
+			width: 70%;
+			padding-bottom: var(--space-xl);
+		}
+
+		.numlist__wrapper::before {
+			display: none;
+			margin: 0;
+			opacity: 0;
+			visibility: hidden;
+			padding: 0;
+			height: 0;
+			width: 0;
+		}
+
+		.numlist__wrapper::after {
+			top: 0;
+			right: 3.5rem;
+		}
+		.numlist__text {
+			padding-top: 0;
+			max-width: 100%;
+		}
+	}
+
+</style>
