@@ -30,4 +30,14 @@
     border-top: 1px solid var(--color-mid-light);
     border-top-width: 90%;
   }
+
+  .wrapper {
+    --gutter: 0em;
+    --wrapper-width: 100%;
+  }
+
+  .project__image {
+    width: 100%;
+    margin: 0 auto
+  }
 }

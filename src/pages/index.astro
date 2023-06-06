@@ -71,7 +71,7 @@ import Footer from "../components/Footer.astro";
 		</section>
 
 		<!-- Services Section -->
-		<section class="region flow">
+		<section id="services" class="region flow">
 			<h2>שירותים</h2>
 			<div class="grid" data-element="services">
 				{
@@ -105,11 +105,6 @@ import Footer from "../components/Footer.astro";
 		<section id="contact-form">
 			<h2>{d.contact.title}</h2>
 			<div class="wrapper border-top">
-				<div class="">
-          <a href="https://wa.me/+972508564794">
-            <p class="form__whatsapp text-step--1" >* לנוחיותכם, ניתן לשלוח הודעת WhatsApp</p>
-					</a>
-				</div>
 				<form action="POST" class="form region" >
 
 					<div class="form__input-block">
@@ -146,6 +141,9 @@ import Footer from "../components/Footer.astro";
 							כמה מילים על הפרויקט
 						</label>
 					</div>
+          <a href="https://wa.me/+972508564794" class="form__whatsapp text-step--1">
+* לנוחיותכם, ניתן לשלוח הודעת WhatsApp
+					</a>
 					<button type="submit">שלח פרטים</button>
 				</form>
 			</div>
@@ -176,6 +174,16 @@ import Footer from "../components/Footer.astro";
 			color: var(--color-light);
 			border-radius: 0.125em;
 			padding: 0.025em;
+		}
+		p {
+			--step--1: var(--step-1);
+			margin-top: 2em;
+		}
+
+		@media (max-width: 420px) {
+				p {
+					margin-top: 2.2em;
+				}
 		}
 
 	}

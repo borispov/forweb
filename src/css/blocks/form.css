@@ -52,11 +52,12 @@
 
 .form [type="submit"] {
   border-radius: var(--border-radius);
-  display: block;
+  grid-column: span 2;
+  /* justify-self: end; */
 }
 
 .form__whatsapp {
-  display: block;
+  display: inline-block;
   grid-column: span 2;
   color: var(--color-accent-2);
   text-decoration: underline;

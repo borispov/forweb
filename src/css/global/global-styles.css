@@ -28,7 +28,7 @@ main {
 
 /* A huge, trendy, headline */
 h1[data-role="big"] {
-  --step-6: clamp(3.32rem, calc(2.21rem + 5.38vw), 15rem);
+  --step-6: clamp(2.99rem, calc(1.95rem + 6.00vw), 15rem);
   font-size: var(--step-6);
 }
 
@@ -294,3 +294,5 @@ p {
 .text-step-6 { font-size: var(--step-6); }
 .text-step--1 { font-size: var(--step--1); }
 .text-step--2 { font-size: var(--step--2); }
+
+.tac { text-align: center; }
