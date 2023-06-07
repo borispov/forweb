@@ -2,6 +2,9 @@
 
   <div class="menu cluster">
     <a data-type="cta" href="#contact-form">יצירת קשר</a>
+  </div>
+
+  <div class="small-menu cluster">
     <a href="#services">שירותים</a>
     <a href="#projects">עבודות</a>
   </div>
@@ -17,20 +20,26 @@
 
 <script>
   let logo = document.querySelector('.logo');
+  let smallMenu = document.querySelector('.small-menu');
+  console.log(smallMenu);
 
   window.addEventListener('load', () => {
     if (window.scrollY > 110) {
       logo.setAttribute('data-did-scroll', 'true')
+      smallMenu.setAttribute('data-did-scroll', 'true')
     } else {
       logo.setAttribute('data-did-scroll', 'false')
+      smallMenu.setAttribute('data-did-scroll', 'false')
     }
   })
 
   window.addEventListener('scroll', () => {
     if (window.scrollY > 110) {
       logo.setAttribute('data-did-scroll', 'true')
+      smallMenu.setAttribute('data-did-scroll', 'true')
     } else {
       logo.setAttribute('data-did-scroll', 'false')
+      smallMenu.setAttribute('data-did-scroll', 'false')
     }
   })
 
@@ -47,14 +56,15 @@
     color: var(--color-accent);
   }
 
+  [data-did-scroll="true"] {
+    opacity: 0;
+  }
+
   .logo {
     z-index: 1;
     transition: .2s linear .05s, transform .05s linear
   }
 
-  .logo[data-did-scroll="true"] {
-    opacity: 0;
-  }
 
   .logo__shapes {
     position: relative;

@@ -4,6 +4,7 @@ import "../css/global.css";
 import Header from "../components/Header.astro";
 import Pricing from "../components/Pricing.astro";
 import Footer from "../components/Footer.astro";
+import Form from "../components/Form.svelte";
 ---
 
 <html lang="en" dir="rtl">
@@ -107,7 +108,10 @@ import Footer from "../components/Footer.astro";
 		<section id="contact-form">
 			<h2>{d.contact.title}</h2>
 			<div class="wrapper border-top">
-				<form action="POST" class="form region" >
+
+				<Form client:load />
+
+				<form method="POST" action="/api/form" class="form region visually-hidden" >
 
 					<div class="form__input-block">
 						<input required class="form__input" type="text" placeholder="שם מלא" name="name" id="input_name" />
@@ -131,14 +135,14 @@ import Footer from "../components/Footer.astro";
 						</label>
 					</div>
 					<div class="form__input-block">
-						<input required class="form__input" placeholder="מספר טלפון" type="tel" name="input_phone" />
+						<input required class="form__input" placeholder="מספר טלפון" type="tel" name="phone" />
 						<label class="form__label" for="input_phone">
 							מס׳ טלפון
 							<span>*</span>
 						</label>
 					</div>
 					<div class="form__input-block form__input--last">
-						<input class="form__input" type="text" placeholder="כמה מילים על הפרויקט" id="input_message"/>
+						<input class="form__input" type="text" name="message" placeholder="כמה מילים על הפרויקט" id="message"/>
 						<label class="form__label" for="input_message">
 							כמה מילים על הפרויקט
 						</label>
@@ -159,7 +163,6 @@ import Footer from "../components/Footer.astro";
 <script>
   import bgTransitionOnElement from "../lib/bgTransition";
   // bgTransitionOnElement('[data-bg="dark"]', window, document);
-
 </script>
 
 <style lang="scss">
