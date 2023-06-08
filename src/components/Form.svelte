@@ -14,10 +14,8 @@
     responseMessage = data.message;
     if (data.error) {
       responseError = data.error;
-      console.log(data.error.message);
-      console.log(data.error.msg);
-      console.log(data.error.data);
-      let a = JSON.stringify(data.error);
+      let a = JSON.stringify(data);
+      console.log(data);
       console.log(a);
     }
 
