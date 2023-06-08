@@ -55,7 +55,7 @@ export const post: APIRoute = async ({ request }) => {
     return new Response( JSON.stringify({ message: "Success! Form submitted, We'll respond within 48 hours." }))
   } catch(e) {
     console.log(e)
-    return new Response( JSON.stringify({ message: "חלה שגיאה בשליחת הטופס. אנא לחץ על כפתור הוואטסאפ, או פנו באמצעות המייל: boristofu@gmail.com" }))
+    return new Response( JSON.stringify({ message: "חלה שגיאה בשליחת הטופס. אנא לחץ על כפתור הוואטסאפ, או פנו באמצעות המייל: boristofu@gmail.com", error: e }))
   }
 
 

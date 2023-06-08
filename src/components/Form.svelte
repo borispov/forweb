@@ -1,5 +1,6 @@
 <script lang="ts">
   $: responseMessage = "";
+  $: responseError = "";
 
   async function submit(e: SubmitEvent) {
     e.preventDefault();
@@ -11,6 +12,9 @@
     console.log(`sending some data: ${formData}`);
     const data = await response.json();
     responseMessage = data.message;
+    if (data.error) {
+      responseError = data.error;
+    }
   }
 </script>
 
@@ -90,5 +94,10 @@
 {#if responseMessage}
   <div>
     <pre>{responseMessage}</pre>
+    {#if responseError}
+      <div>
+        <pre>{responseError}</pre>
+      </div>
+    {/if}
   </div>
 {/if}
