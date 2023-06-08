@@ -14,7 +14,12 @@
     responseMessage = data.message;
     if (data.error) {
       responseError = data.error;
+      console.log(data.error.message);
+      console.log(data.error.msg);
+      console.log(data.error.data);
     }
+
+    console.log(Object.entries(data.error));
   }
 </script>
 
