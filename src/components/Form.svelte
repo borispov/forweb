@@ -15,11 +15,8 @@
     if (data.error) {
       responseError = data.error;
       let a = JSON.stringify(data);
-      console.log(data);
       console.log(a);
     }
-
-    console.log(Object.entries(data.error));
   }
 </script>
 

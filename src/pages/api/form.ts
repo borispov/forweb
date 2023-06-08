@@ -1,7 +1,5 @@
 import { APIRoute } from "astro";
 
-
-
 import formData from 'form-data';
 import Mailgun from "mailgun.js";
 
@@ -22,8 +20,8 @@ const sendThankYouEmail = async ( email: string, msg ) => {
   };
 
   mg.messages.create(domain, mailData)
-    .then(msg => console.log(msg)) 
-    .catch(err => console.log(err))
+    .then(msg => msg) 
+    .catch(err => err)
 };
 
 
