@@ -17,6 +17,8 @@
       console.log(data.error.message);
       console.log(data.error.msg);
       console.log(data.error.data);
+      let a = JSON.stringify(data.error);
+      console.log(a);
     }
 
     console.log(Object.entries(data.error));
