@@ -51,15 +51,15 @@ export const post: APIRoute = async ({ request }) => {
 
   try {
     const formattedMessage = formatDataAsMessage(name, company, email, phone, message);
-    let res = await sendThankYouEmail( 'boristofu@gmail.com', formattedMessage )
-    return new Response( JSON.stringify("Success! Form submitted, We'll respond within 48 hours."))
+    await sendThankYouEmail( 'boristofu@gmail.com', formattedMessage )
+    return new Response( JSON.stringify({ message: "Success! Form submitted, We'll respond within 48 hours." }))
   } catch(e) {
     console.log(e)
-    return new Response( JSON.stringify("ERRRORRRRRRRRRRRRR"))
+    return new Response( JSON.stringify({ message: "חלה שגיאה בשליחת הטופס. אנא לחץ על כפתור הוואטסאפ, או פנו באמצעות המייל: boristofu@gmail.com" }))
   }
 
 
-  const data = getTemplatedMessageInput(import.meta.env.RECIPIENT_WAID, dataObj)
+  // const data = getTemplatedMessageInput(import.meta.env.RECIPIENT_WAID, dataObj)
   // const data = getTextMessageInput(import.meta.env.RECIPIENT_WAID, dataObj)
 
   console.log(`This is the message structure: ${data}`)

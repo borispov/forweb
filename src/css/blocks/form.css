@@ -36,6 +36,7 @@
   line-height: var(--lh140);
   letter-spacing: -0.02rem;
   padding-bottom: 1em;
+  border: none;
 }
 
 .form__input--last {

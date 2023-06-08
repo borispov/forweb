@@ -152,14 +152,15 @@ main:focus {
 
 pre {
   padding: var(--space-xs);
-  background: var(--color-dark);
+  background: var(--color-light);
 
   overflow-x: auto;
   -webkit-overflow-scrolling: touch;
+  color:var(--color-dark);
 }
 
 pre code {
-  color: var(--color-light);
+  /* color: var(--color-light); */
 }
 
 dl {

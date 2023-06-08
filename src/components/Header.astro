@@ -5,8 +5,29 @@
   </div>
 
   <div class="small-menu cluster">
-    <a href="#services">שירותים</a>
-    <a href="#projects">עבודות</a>
+
+    <a class="link-grab nav__link" href="#services">
+      <span class="link-content">
+        <span class="link-inner-content">
+          <span>
+            שירותים
+            <span aria-hidden="true">שירותים</span>
+          </span>
+        </span>
+      </span>
+    </a>
+
+    <a class="link-grab nav__link" href="#projects">
+      <span class="link-content">
+        <span class="link-inner-content">
+          <span>
+            עבודות
+            <span aria-hidden="true">עבודות</span>
+          </span>
+        </span>
+      </span>
+    </a>
+
   </div>
   
   <div class="logo" data-did-scroll="false">
@@ -46,6 +67,114 @@
 </script>
 
 <style lang="scss">
+
+  @mixin link($timing: 0.9s cubic-bezier(0.19, 1, 0.22, 1)) {
+    display: flex;
+    flex: none;
+    flex-direction: row;
+    flex-grow: 0;
+    align-items: center;
+    justify-content: center;
+    order: 0;
+    padding: 15px 20px;
+    font-weight: inherit;
+    font-size: var(--step-0);
+    line-height: var(--lh140);
+    letter-spacing: -0.02em;
+    white-space: nowrap;
+    cursor: pointer;
+    user-select: none;
+    touch-action: manipulation;
+    position: relative;
+    overflow: hidden;
+    transition: background 0.6s, color 0.6s;
+    text-decoration: none;
+    max-width: fit-content;
+
+    &::after,
+    &::before {
+      display: none;
+    }
+
+    span.link-inner-content {
+      display: block;
+      overflow: hidden;
+      text-decoration: none;
+      pointer-events: none;
+    }
+
+    span.link-inner-content span {
+      display: block;
+      position: relative;
+      transform-origin: left top;
+      transition: transform $timing;
+      pointer-events: none;
+      text-decoration: none;
+    }
+  }
+
+  /* split roll up transition out to enable better focus states */
+  @mixin link-animation($timing: 0.9s cubic-bezier(0.19, 1, 0.22, 1)) {
+    .link-inner-content span:after {
+      content: attr(data-text);
+      display: block;
+      position: absolute;
+      top: 100%;
+      left: 0;
+      transform-origin: left top;
+      transition: transform 0.9s;
+      width: 100%;
+      height: 100%;
+    }
+
+    // Guram this is part we want to add for the accessibility
+    // concerns. We also need to change the markup as well
+    
+    // Guram
+    .link-inner-content > span > span[aria-hidden] {
+      display: block;
+      position: absolute;
+      top: 100%;
+      left: 0;
+      transform-origin: left top;
+      transition: transform $timing;
+      width: 100%;
+      height: 100%;
+    }
+    // Guram
+
+    &:focus,
+    &:focus-visible,
+    &:hover {
+      text-decoration: none;
+
+      // Guram this is part we want to add for the accessibility
+      // concerns. We also need to change the markup as well
+      
+      // Guram
+      .link-inner-content > span > span[aria-hidden] {
+        transform: translateY(0%);
+      }
+      // Guram
+
+      .link-inner-content span {
+        transform: translateY(-100%);
+      }
+    }
+  }
+
+  .nav__link {
+      @include link-animation(
+        $timing: 0.9s cubic-bezier(0.19, 1, 0.22, 1)
+      );
+      @include link($timing: 0.9s cubic-bezier(0.19, 1, 0.22, 1));
+
+      font-size: var(--step-0);
+      color: var(--color-dark);
+  }
+
+
+
 
   h3 {
     display: inline-block;
