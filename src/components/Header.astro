@@ -6,27 +6,31 @@
 
   <div class="small-menu cluster">
 
-    <a class="link-grab nav__link" href="#services">
-      <span class="link-content">
-        <span class="link-inner-content">
-          <span>
-            שירותים
-            <span aria-hidden="true">שירותים</span>
+    <div class="hover-underline">
+      <a class="link-grab nav__link" href="#services">
+        <span class="link-content">
+          <span class="link-inner-content">
+            <span>
+              שירותים
+              <span aria-hidden="true">שירותים</span>
+            </span>
           </span>
         </span>
-      </span>
-    </a>
+      </a>
+    </div>
 
-    <a class="link-grab nav__link" href="#projects">
-      <span class="link-content">
-        <span class="link-inner-content">
-          <span>
-            עבודות
-            <span aria-hidden="true">עבודות</span>
+    <div class="hover-underline">
+      <a class="link-grab nav__link hover-underline" href="#projects">
+        <span class="link-content">
+          <span class="link-inner-content">
+            <span>
+              עבודות
+              <span aria-hidden="true">עבודות</span>
+            </span>
           </span>
         </span>
-      </span>
-    </a>
+      </a>
+    </div>
 
   </div>
   
@@ -273,5 +277,13 @@
     a:not([data-type='cta']){
       display: none;
     }
+  }
+
+  .hover-underline::before {
+    --h-underline-space: 0.5rem;
+  }
+
+  .hover-underline > * {
+      text-decoration: none !important;
   }
 </style>

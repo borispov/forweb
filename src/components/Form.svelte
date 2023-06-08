@@ -86,7 +86,9 @@
     * לנוחיותכם, ניתן לשלוח הודעת WhatsApp
   </a>
   <button type="submit">שלח פרטים</button>
-  {#if responseMessage}
-    <pre>{responseMessage}</pre>
-  {/if}
 </form>
+{#if responseMessage}
+  <div>
+    <pre>{responseMessage}</pre>
+  </div>
+{/if}
