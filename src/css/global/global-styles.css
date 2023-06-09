@@ -1,6 +1,7 @@
 body {
   background: var(--color-light);
-  color: var(--color-dark);
+  background: var(--background);
+  color: var(--text-color);
   line-height: 1.6;
   font-size: var(--size-base);
   font-family: 'Rubik', Arial, system;
@@ -11,10 +12,10 @@ body {
   transition: background 1s ease;
 }
 
-body[data-color-mode="dark"] {
-  background: var(--color-dark);
-  color: var(--color-light);
-}
+/* body[dark-mode="true"] { */
+/*   background: var(--color-dark); */
+/*   color: var(--color-light); */
+/* } */
 
 /* Match the page paddings on design throughout the page */
 body.wrapper {
@@ -30,11 +31,13 @@ main {
 h1[data-role="big"] {
   --step-6: clamp(2.99rem, calc(1.95rem + 6.00vw), 15rem);
   font-size: var(--step-6);
+  color: var(--subheadings-color);
 }
 
 /* Big h2 Headline */
 h2[data-role="big"] {
   font-size: var(--step-5);
+  color: var(--subheadings-color);
 }
 
 h1 {
@@ -43,6 +46,7 @@ h1 {
 
 h2 {
   font-size: var(--step-4);
+  color: var(--subheadings-color);
 }
 
 h3 {
@@ -217,7 +221,7 @@ label::after {
   padding: 0.3em;
   background: transparent;
   font: inherit;
-  border-bottom: 1px solid var(--color-mid);
+  border-bottom: 1px solid var(--border-color);
   width: 100%;
 }
 
@@ -233,7 +237,7 @@ button {
   display: inline-block;
   font: inherit;
   padding: 0.3em 1em;
-  border: 1px solid var(--color-mid);
+  border: 1px solid var(--border-color);
   background: var(--color-dark);
   color: var(--color-light);
   font-weight: 700;
@@ -250,13 +254,8 @@ last-fm p {
 }
 
 ::selection {
-  background: var(--color-dark);
-  color: var(--color-light);
-}
-
-::selection[data-color="dark"] {
-  background: var(--color-light);
-  color: var(--color-dark);
+  background: var(--text-color);
+  color: var(--background);
 }
 
 @media screen(md) {
@@ -328,4 +327,10 @@ p {
     .hover-underline:hover::before {
         transform:scaleX(0)
     }
+}
+
+
+/* dark mode */
+.logo h3 {
+  color: var(--color-primary);
 }

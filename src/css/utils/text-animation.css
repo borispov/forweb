@@ -1,0 +1,5 @@
+@keyframes roll-chars-to-right {
+    0% { bottom: -0.01em; opacity: 1; }
+    50% { bottom: 0.01em;}
+    100% { bottom: 0; opacity: 0; }
+}

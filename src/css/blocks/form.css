@@ -14,7 +14,7 @@
 .form__label {
   font-size: var(--step--1);
   line-height: var(--lh140);
-  color: var(--color-mid);
+  color: var(--text-color);
   letter-spacing: -0.02rem;
 
   position: absolute;

@@ -1,11 +1,83 @@
-<header class="repel">
+<script>
+  import Burger from "./Burger.svelte";
+  import BigMenu from "./BigMenu.svelte";
 
-  <div class="menu cluster">
+  $: isMenuOpen = false;
+
+  // TODO: store preferences in localStorage
+  $: darkMode = false;
+
+  let burgerHandler = () => {
+    isMenuOpen = true;
+  };
+
+  $: hide = false;
+
+  let togg = () => {
+    darkMode = !darkMode;
+    window.document.body.setAttribute("dark-mode", darkMode);
+  };
+
+  const windowScrollHandler = () => {
+    if (window.scrollY > 110) {
+      hide = true;
+    } else {
+      hide = false;
+    }
+  };
+</script>
+
+<svelte:window on:scroll={windowScrollHandler} on:load={windowScrollHandler} />
+<header class="repel">
+  <BigMenu bind:isMenuOpen />
+  <div class="menu repel">
+    <button aria-label="theme toggle" on:click={togg} class="theme-toggle">
+      {#if darkMode}
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          width="24"
+          height="24"
+          viewBox="0 0 24 24"
+          ><path
+            fill="currentColor"
+            d="M12 21q-3.75 0-6.375-2.625T3 12q0-3.75 2.625-6.375T12 3q.35 0 .688.025t.662.075q-1.025.725-1.638 1.888T11.1 7.5q0 2.25 1.575 3.825T16.5 12.9q1.375 0 2.525-.613T20.9 10.65q.05.325.075.662T21 12q0 3.75-2.625 6.375T12 21Z"
+          /></svg
+        >
+      {:else}
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          width="24"
+          height="24"
+          viewBox="0 0 24 24"
+          ><g fill="none"
+            ><circle
+              cx="12"
+              cy="12"
+              r="4"
+              fill="currentColor"
+              opacity=".16"
+            /><circle
+              cx="12"
+              cy="12"
+              r="4"
+              stroke="currentColor"
+              stroke-linejoin="round"
+              stroke-width="2"
+            /><path
+              stroke="currentColor"
+              stroke-linecap="round"
+              stroke-width="2"
+              d="M20 12h1M3 12h1m8 8v1m0-18v1m5.657 13.657l.707.707M5.636 5.636l.707.707m0 11.314l-.707.707M18.364 5.636l-.707.707"
+            /></g
+          ></svg
+        >
+      {/if}
+    </button>
     <a data-type="cta" href="#contact-form">יצירת קשר</a>
+    <Burger handler={burgerHandler} />
   </div>
 
-  <div class="small-menu cluster">
-
+  <div class="small-menu cluster" class:hide>
     <div class="hover-underline">
       <a class="link-grab nav__link" href="#services">
         <span class="link-content">
@@ -31,47 +103,18 @@
         </span>
       </a>
     </div>
-
   </div>
-  
-  <div class="logo" data-did-scroll="false">
+
+  <div class="logo" class:hide>
     <h3>FOR<span>WEB</span></h3>
     <div class="logo__shapes">
-      <span data-shape="cube"></span>
-      <span data-shape="circle"></span>
+      <span data-shape="cube" />
+      <span data-shape="circle" />
     </div>
   </div>
 </header>
 
-<script>
-  let logo = document.querySelector('.logo');
-  let smallMenu = document.querySelector('.small-menu');
-  console.log(smallMenu);
-
-  window.addEventListener('load', () => {
-    if (window.scrollY > 110) {
-      logo.setAttribute('data-did-scroll', 'true')
-      smallMenu.setAttribute('data-did-scroll', 'true')
-    } else {
-      logo.setAttribute('data-did-scroll', 'false')
-      smallMenu.setAttribute('data-did-scroll', 'false')
-    }
-  })
-
-  window.addEventListener('scroll', () => {
-    if (window.scrollY > 110) {
-      logo.setAttribute('data-did-scroll', 'true')
-      smallMenu.setAttribute('data-did-scroll', 'true')
-    } else {
-      logo.setAttribute('data-did-scroll', 'false')
-      smallMenu.setAttribute('data-did-scroll', 'false')
-    }
-  })
-
-</script>
-
 <style lang="scss">
-
   @mixin link($timing: 0.9s cubic-bezier(0.19, 1, 0.22, 1)) {
     display: flex;
     flex: none;
@@ -133,7 +176,7 @@
 
     // Guram this is part we want to add for the accessibility
     // concerns. We also need to change the markup as well
-    
+
     // Guram
     .link-inner-content > span > span[aria-hidden] {
       display: block;
@@ -154,7 +197,7 @@
 
       // Guram this is part we want to add for the accessibility
       // concerns. We also need to change the markup as well
-      
+
       // Guram
       .link-inner-content > span > span[aria-hidden] {
         transform: translateY(0%);
@@ -168,17 +211,12 @@
   }
 
   .nav__link {
-      @include link-animation(
-        $timing: 0.9s cubic-bezier(0.19, 1, 0.22, 1)
-      );
-      @include link($timing: 0.9s cubic-bezier(0.19, 1, 0.22, 1));
+    @include link-animation($timing: 0.9s cubic-bezier(0.19, 1, 0.22, 1));
+    @include link($timing: 0.9s cubic-bezier(0.19, 1, 0.22, 1));
 
-      font-size: var(--step-0);
-      color: var(--color-dark);
+    font-size: var(--step-0);
+    color: var(--color-dark);
   }
-
-
-
 
   h3 {
     display: inline-block;
@@ -189,15 +227,12 @@
     color: var(--color-accent);
   }
 
-  [data-did-scroll="true"] {
-    opacity: 0;
-  }
-
-  .logo {
+  .logo,
+  .small-menu {
     z-index: 1;
-    transition: .2s linear .05s, transform .05s linear
+    --t: 0.2s linear 0.05s, transform 0.05s linear;
+    transition: var(--t);
   }
-
 
   .logo__shapes {
     position: relative;
@@ -240,10 +275,6 @@
     margin-bottom: var(--space-2xl);
   }
 
-  .logo {
-
-  }
-
   .menu {
     --gutter: 1em;
     --color-mid: #bababa;
@@ -269,13 +300,19 @@
     border: 1px solid var(--color-mid);
     transition: background var(--t);
 
-      &:hover {
-        background: var(--color-dark);
-      }
+    &:hover {
+      background: var(--color-dark);
+    }
   }
 
   @media (max-width: 568px) {
-    a:not([data-type='cta']){
+    /** SHOW CTA BUTTON */
+
+    a:not([data-type="cta"]) {
+      display: none;
+    }
+
+    a {
       display: none;
     }
   }
@@ -285,6 +322,28 @@
   }
 
   .hover-underline > * {
-      text-decoration: none !important;
+    text-decoration: none !important;
+  }
+
+  .hide {
+    opacity: 0;
+  }
+
+  .theme-toggle {
+    background: transparent;
+    color: inherit;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: var(--space-2xs);
+    border: none;
+  }
+
+  [dark-mode="true"] {
+    background: blue;
+    h3 {
+      color: var(--color-primary);
+      background: white;
+    }
   }
 </style>

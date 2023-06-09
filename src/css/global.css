@@ -17,3 +17,6 @@
 @import "utils/border.css";
 @import "utils/padding.css";
 @import "utils/visually-hidden.css";
+@import "utils/italic.css";
+
+@import "utils/text-animation.css";
