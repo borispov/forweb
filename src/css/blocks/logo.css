@@ -1,0 +1,56 @@
+.logo__type {
+  display: inline-block;
+  color: var(--color-accent-2);
+}
+
+.logo__type span {
+  color: var(--color-accent);
+  letter-spacing: 0.02em;
+}
+
+
+  .logo__type {
+    display: inline-block;
+    color: var(--color-accent-2);
+  }
+
+  .logo__type span {
+    color: var(--color-accent);
+  }
+
+  .logo,
+  .small-menu {
+    z-index: 1;
+    --t: 0.2s linear 0.05s, transform 0.05s linear;
+    transition: var(--t);
+  }
+
+  .logo__shapes {
+    position: relative;
+    display: inline-block;
+    width: 24px;
+  }
+
+  .logo__shapes span[data-shape="circle"] {
+    bottom: 0;
+    left: 0;
+    margin-left: -10px;
+    margin-top: -10px;
+    position: absolute;
+    display: block;
+    width: 20px;
+    height: 20px;
+    /* border-radius: 50px; */
+    background: var(--color-accent);
+    z-index: 1;
+  }
+
+  span[data-shape="cube"] {
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 24px;
+    height: 24px;
+    background: var(--color-accent-2);
+    z-index: 0;
+  }

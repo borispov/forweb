@@ -2,6 +2,7 @@
 @import "global/variables.css";
 @import "global/global-styles.css";
 
+@import "blocks/logo.css";
 @import "blocks/card.css";
 @import "blocks/project.css";
 @import "blocks/snippet.css";

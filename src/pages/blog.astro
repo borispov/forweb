@@ -1,0 +1,77 @@
+---
+import d from "../siteContent.json";
+import "../css/global.css";
+import Header from "../components/Header.svelte";
+import Footer from "../components/Footer.astro";
+import Form from "../components/Form.svelte";
+
+let darkMode = false;
+
+let toggler = () => {
+	console.log("TOGGLING!: ", darkMode);
+}
+---
+
+<html lang="en" dir="rtl">
+	<head>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width" />
+		<link rel="icon" type="image/x-icon" href="/favicon.svg">
+		<meta name="generator" content={Astro.generator} />
+		<meta property="og:title" content="Forweb Software Development | Forweb.co.il" />
+		<meta property="og:description" content="We Create Stunning Marketing Websites, Ecommerce, and Web Applications For Businesses" />
+		<meta property="og:image" content="/assets/OpenGraph.jpg" />
+		<title>Forweb - Blog</title>
+	</head>
+
+	<body class="wrapper">
+
+		<Header darkMode={darkMode} client:only toggler={toggler} />
+		<!-- HERO Section -->
+		<div class="hero flow">
+			<h1 role="heading" data-role="big">אנחנו עובדים על זה</h1>
+			<p>התאזרו בסבלנות, אנחנו עובדים על זה. אם יש משהו במיוחד שהייתם רוצים לדעת, ללמוד ולקרוא עליו, רשמו לנו כאן: boristofu@gmail.com</p>
+		</div>
+
+		<section id="contact-form">
+			<h2>{d.contact.title}</h2>
+			<div class="wrapper border-top">
+
+				<Form client:load />
+
+			</div>
+		</section>
+
+		<Footer />
+
+	</body>
+</html>
+
+<style lang="scss">
+	.hero {
+		margin-bottom: var(--space-3xl);
+
+		h1 {
+			display: inline;
+			}
+
+		h1 span {
+			background: var(--bubble-bg);
+			display: inline;
+			color: var(--color-light);
+			border-radius: 0.125em;
+			padding: 0.025em;
+		}
+		p {
+			--step--1: var(--step-1);
+			margin-top: 2em;
+		}
+
+		@media (max-width: 420px) {
+				p {
+					margin-top: 2.2em;
+				}
+		}
+
+	}
+</style>

@@ -73,13 +73,13 @@
         >
       {/if}
     </button>
-    <a data-type="cta" href="#contact-form">יצירת קשר</a>
+    <a data-type="cta" href="/#contact-form">יצירת קשר</a>
     <Burger handler={burgerHandler} />
   </div>
 
   <div class="small-menu cluster" class:hide>
     <div class="hover-underline">
-      <a class="link-grab nav__link" href="#services">
+      <a class="link-grab nav__link" href="/#services">
         <span class="link-content">
           <span class="link-inner-content">
             <span>
@@ -92,7 +92,7 @@
     </div>
 
     <div class="hover-underline">
-      <a class="link-grab nav__link hover-underline" href="#projects">
+      <a class="link-grab nav__link hover-underline" href="/#projects">
         <span class="link-content">
           <span class="link-inner-content">
             <span>
@@ -106,7 +106,7 @@
   </div>
 
   <div class="logo" class:hide>
-    <h3>FOR<span>WEB</span></h3>
+    <h3 class="logo__type">FOR<span>WEB</span></h3>
     <div class="logo__shapes">
       <span data-shape="cube" />
       <span data-shape="circle" />
@@ -218,12 +218,12 @@
     color: var(--color-dark);
   }
 
-  h3 {
+  .logo__type {
     display: inline-block;
     color: var(--color-accent-2);
   }
 
-  h3 span {
+  .logo__type span {
     color: var(--color-accent);
   }
 

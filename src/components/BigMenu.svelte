@@ -13,12 +13,12 @@
 
   let menuItems = [
     { href: "/", label: "בית" },
-    { href: "/", label: "עבודות" },
-    { href: "/", label: "אודות" },
-    { href: "/", label: "שירותים" },
-    { href: "/", label: "טכני" },
-    { href: "/", label: "יצירת קשר" },
-    { href: "/", label: "בלוג" },
+    { href: "/#projects", label: "עבודות" },
+    { href: "/about", label: "אודות" },
+    { href: "/#services", label: "שירותים" },
+    { href: "/#tech", label: "טכני" },
+    { href: "/#contact-form", label: "יצירת קשר" },
+    { href: "/blog", label: "בלוג" },
   ];
 
   let outlineHover = (e, i) => {};
@@ -83,12 +83,27 @@
           d="M1.25 0.75L13.25 12.75"
           stroke="currentColor"
         /></svg
-      ></button
-    >
+      >
+    </button>
+
+    <div class="logo free-form">
+      <h3 class="logo__type">FOR<span>WEB</span></h3>
+      <div class="logo__shapes">
+        <span data-shape="cube" />
+        <span data-shape="circle" />
+      </div>
+    </div>
   </div>
 {/if}
 
 <style lang="scss">
+  .free-form {
+    position: fixed;
+    bottom: 0.5em;
+    left: var(--space-xl);
+    border: 1px solid var(--color-mid);
+  }
+
   * {
     cursor: none;
   }
@@ -143,7 +158,12 @@
   }
 
   .grid {
+    grid-template-columns: repeat(3, 1fr);
+    @media (max-width: 1440px) {
+      grid-template-columns: repeat(2, 1fr);
+    }
     @media (max-width: 767px) {
+      grid-template-columns: repeat(1, 1fr);
       --gutter: 0.5em;
     }
   }
