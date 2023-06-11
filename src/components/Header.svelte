@@ -215,7 +215,7 @@
     @include link($timing: 0.9s cubic-bezier(0.19, 1, 0.22, 1));
 
     font-size: var(--step-0);
-    color: var(--color-dark);
+    color: var(--text-color);
   }
 
   .logo__type {
