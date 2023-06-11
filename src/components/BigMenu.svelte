@@ -106,6 +106,9 @@
 
   * {
     cursor: none;
+    @media (hover: none) {
+      cursor: default;
+    }
   }
   .h {
     width: 50px;
@@ -125,6 +128,9 @@
     border-radius: 50%;
     z-index: 99999;
     transform: translate3d(calc(var(--x) - 50%), calc(var(--y) - 50%), 0);
+    @media (hover: none) {
+      display: none;
+    }
   }
 
   .inner-h {
@@ -140,6 +146,9 @@
     transition: width 0.3s, height 0.3s, opacity 0.3s;
     left: var(--x);
     top: var(--y);
+    @media (hover: none) {
+      display: none;
+    }
   }
 
   .header-menu {

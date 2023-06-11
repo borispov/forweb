@@ -13,7 +13,7 @@
     width: calc((100% - (var(--cards) - 1) * 1px) / var(--cards) * var(--span) + (var(--span) - 1) * 1px);
     /* max-height: 10.2rem; */
     padding: 0.5em;
-    background-color: var(--color-light);
+    background-color: var(--background);
     overflow: hidden;
     display: flex;
     flex-direction: column;
@@ -23,11 +23,12 @@
 }
 
 .tech__item:hover {
-    background-color: var(--color-primary);
+    background-color: var(--color-accent);
+    color: var(--color-dark);
 }
 
 .tech__label {
-  color: var(--color-onyx);
+  color: var(--text-color);
   font-size: var(--step--2);
 }
 
@@ -38,6 +39,7 @@
   width: 41px;
   height: 41px;
   margin-bottom: 0.25em;
+  filter: var(--svg-color-fill);
 }
 
 @media (max-width: 1024px) {

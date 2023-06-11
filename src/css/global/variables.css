@@ -29,6 +29,7 @@
   --text-color: var(--color-dark);
 
 
+  --svg-color-fill: none;
   --icon-sun-filter: invert(0.61) sepia(0.8) saturate(5) hue-rotate(0deg) brightness(0.92);
   --icon-moon-filter: invert(0.75);
   --button-icon: var(--icon-moon);
@@ -71,6 +72,7 @@
   --b-top: 1px solid var(--border-color);
   --subheadings-color: var(--color-accent);
   --bubble-bg: var(--color-accent-2);
+  --svg-color-fill: invert(0.85);
 }
 
 /* Global variables */
