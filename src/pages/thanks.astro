@@ -1,0 +1,70 @@
+---
+import "../css/global.css";
+import Header from "../components/Header.svelte";
+import Footer from "../components/Footer.astro";
+
+let darkMode = false;
+
+let toggler = () => {
+	console.log("TOGGLING!: ", darkMode);
+}
+---
+
+<html lang="en" dir="rtl">
+	<head>
+		<meta name="robots" content="noindex" />
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width" />
+		<link rel="icon" type="image/x-icon" href="/favicon.svg">
+		<meta name="generator" content={Astro.generator} />
+		<meta property="og:title" content="Forweb Software Development Studio | forweb.co.il" />
+		<meta property="og:description" content="We Create Stunning Marketing Websites, Ecommerce, and Web Applications For Businesses" />
+		<meta property="og:image" content="/assets/OpenGraph.jpg" />
+		<title>Forweb - Web Dev and Design Studio | forweb.co.il</title>
+	</head>
+
+	<body class="wrapper">
+
+		<Header darkMode={darkMode} client:only toggler={toggler} />
+		<!-- HERO Section -->
+		<div class="hero flow">
+			<!-- <h1 data-role="big">{d.hero.title}</h1> -->
+			<h1 role="heading" data-role="big">Thanks For Reaching Out!</h1>
+			<p>We'll get in touch within 48 hours.</p>
+		</div>
+
+		<Footer />
+
+	</body>
+</html>
+
+
+<style lang="scss">
+	.hero {
+		margin-bottom: var(--space-3xl);
+
+		h1 {
+			display: inline;
+			}
+
+		h1 span {
+			background: var(--bubble-bg);
+			display: inline;
+			color: var(--color-light);
+			border-radius: 0.125em;
+			padding: 0.025em;
+		}
+		p {
+			--step--1: var(--step-1);
+			margin-top: 2em;
+		}
+
+		@media (max-width: 420px) {
+				p {
+					margin-top: 2.2em;
+				}
+		}
+
+	}
+
+</style>
