@@ -5,22 +5,33 @@
   async function submit(e: SubmitEvent) {
     e.preventDefault();
     const formData = new FormData(e.currentTarget as HTMLFormElement);
-    const response = await fetch("/api/form", {
+
+    fetch("/", {
       method: "POST",
-      body: formData,
-    });
-    console.log(`sending some data: ${formData}`);
-    const data = await response.json();
-    responseMessage = data.message;
-    if (data.error) {
-      responseError = data.error;
-      let a = JSON.stringify(data);
-      console.log(a);
-    }
+      headers: { "Content-Type": "application/x-www-form-urlencoded" },
+      body: new URLSearchParams(formData).toString(),
+    })
+      .then(
+        () =>
+          (responseMessage =
+            "Form Submitted! Expect To Hear From Us Within 48 hours.")
+      )
+      .catch(
+        (error) =>
+          (responseError =
+            "Could Not Send The Email, Please send us an email manually via boristofu@gmail.com")
+      );
   }
 </script>
 
-<form on:submit={submit} class="form region">
+<!-- <form on:submit={submit} class="form region"> -->
+<form
+  name="contact"
+  method="POST"
+  on:submit={submit}
+  data-netlify="true"
+  class="form region"
+>
   <div class="form__input-block">
     <input
       required
