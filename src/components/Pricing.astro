@@ -16,6 +16,7 @@ import d from "../siteContent.json";
               ))
             }
           </ul>
+          <p class="price">החל מ- ₪{plan.price.value} או <br/> ₪{plan.price.reccuring} / חודש</p>
           <div>
           </div>
         </div>
@@ -28,6 +29,11 @@ import d from "../siteContent.json";
   .plan {
     border: 1px solid var(--color-mid);
     border-radius: var(--border-radius);
+  }
+
+  .price {
+    color: #414141;
+    font-weight: 700;
   }
 
   .plan[data-mode="dark"] {

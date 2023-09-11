@@ -4,7 +4,6 @@ import "../css/global.css";
 import Header from "../components/Header.svelte";
 import Pricing from "../components/Pricing.astro";
 import Footer from "../components/Footer.astro";
-import Form from "../components/Form.svelte";
 
 let darkMode = false;
 
@@ -58,7 +57,7 @@ let toggler = () => {
 			}
 		</section>
 
-		<!-- <Pricing /> -->
+		<Pricing />
 
 		<!-- Process/workflow Section -->
 		<section class="[ process ] region flow" data-bg="light">
