@@ -106,11 +106,13 @@
   </div>
 
   <div class="logo" class:hide>
-    <h3 class="logo__type">FOR<span>WEB</span></h3>
-    <div class="logo__shapes">
-      <span data-shape="cube" />
-      <span data-shape="circle" />
-    </div>
+    <a href="/">
+      <h3 class="logo__type">FOR<span>WEB</span></h3>
+      <div class="logo__shapes">
+        <span data-shape="cube" />
+        <span data-shape="circle" />
+      </div>
+    </a>
   </div>
 </header>
 
